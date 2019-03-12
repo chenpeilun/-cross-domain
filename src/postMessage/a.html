@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>postMessage跨域</title>
+</head>
+<body>
+    a网页（发生数据）
+    <iframe src="http://localhost:4000/b.html"
+    		frameborder="1" id="frame" onload="load()">
+    </iframe>
+    <script type="text/javascript">
+    	function load() {
+    		let frame = document.getElementById('frame')
+    		frame.contentWindow.postMessage('我在等你', 'http:localhost:4000') // 发送数据
+    		window.onmessage = function(e) {
+    			console.log('b:',e.data) // 接收发送页面返回的数据
+    		}
+    	}
+    </script>
+</body>
+</html>

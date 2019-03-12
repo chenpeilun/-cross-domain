@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>postMessage跨域</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    b网页（接收a网页发送的数据，并返回数据）
+    <script type="text/javascript">
+    	window.onmessage = function(e) {
+    		console.log('a:',e.data) // 我在等你
+    		e.source.postMessage('我也在等你', e.origin)
+    	}
+    </script>
+</body>
+</html>
