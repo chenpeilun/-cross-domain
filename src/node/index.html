@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>node中间件代理</title>
+</head>
+<body>
+    <script type="text/javascript" src="./jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+    	$.ajax({
+    		url: 'http://localhost:3000',
+    		type: 'post',
+    		data: {name: 'chenpeilun', password: '123456'},
+    		contentType: 'application/json;charset=utf-8',
+    		success: function(res) {
+    			console.log(res)
+    		},
+    		error: function(msg) {
+    			console.log(msg)
+    		}
+    	})
+    </script>
+</body>
+</html>
